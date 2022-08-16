@@ -18,7 +18,7 @@ export const auth = async (req: Request, res: Response, next: NextFunction) => {
       });  
 };
 
-export const accessToken = async (req: Request, res: Response) => {
+export const accessToken = async (req: Request) => {
   const data = req.body;
   const accesstoken = jwt.sign(data, ACCESS_TOKEN_SECRET, { expiresIn: "1h" });
   return accesstoken;
